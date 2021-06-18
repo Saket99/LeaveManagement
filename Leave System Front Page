@@ -1,0 +1,42 @@
+root = Tk()
+root.wm_attributes('-fullscreen', '1')
+root.title("Leave Management System")
+root.iconbitmap(default='leavelogo.ico')
+filename = PhotoImage(file="background.gif")
+background_label = Label(root, image=filename)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+BtnFont = Font(family='Calibri(Body)', size=20)
+MainLabel = Label(root, text="Leave Management System", bd=12, relief=GROOVE, fg="White", bg="blue",
+                      font=("Calibri", 36, "bold"), pady=3)
+MainLabel.pack(fill=X)
+im = PhotoImage(file='login.gif')
+
+AdminLgnBtn = Button(root, text='Admin login',  bd=12, relief=GROOVE, fg="blue", bg="#ffffb3",
+                      font=("Calibri", 36, "bold"), pady=3, command=AdminLogin)
+AdminLgnBtn['font'] = BtnFont
+AdminLgnBtn.pack(fill=X)
+
+
+LoginBtn = Button(root, text='Employee login', bd=12, relief=GROOVE, fg="blue", bg="#ffffb3",
+                      font=("Calibri", 36, "bold"), pady=3, command=EmployeeLogin)
+LoginBtn['font'] = BtnFont
+LoginBtn.pack(fill=X)
+
+
+EmployeeRegistration = Button(root, text='Employee registration', command=registration, bd=12, relief=GROOVE, fg="blue", bg="#ffffb3",
+                      font=("Calibri", 36, "bold"), pady=3)
+EmployeeRegistration['font'] = BtnFont
+EmployeeRegistration.pack(fill=X)
+
+ExitBtn = Button(root, text='Exit', command=root.destroy, bd=12, relief=GROOVE, fg="red", bg="#ffffb3",
+                      font=("Calibri", 36, "bold"), pady=3)
+ExitBtn['font'] = BtnFont
+ExitBtn.pack(fill=X)
+MainLabel.pack()
+AdminLgnBtn.pack()
+LoginBtn.pack()
+EmployeeRegistration.pack()
+ExitBtn.pack()
+
+
+root.mainloop()
